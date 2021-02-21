@@ -1,7 +1,6 @@
 import React from 'react'
 import './Home.css'
-import Layout from '../../Components/shared/Layout/Layout'
-
+import Layout from '../../components/shared/Layout/Layout'
 
 const Home = () => {
 
