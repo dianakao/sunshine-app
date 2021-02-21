@@ -45,3 +45,7 @@
 ### Results Page 3 - Impact overlay
 - #### Button Panel
 - #### Info Panel - Impact Data
+
+## Technical Challenges
+- #### Implementing the Overlay
+- #### Implementing CSS
