@@ -3,7 +3,6 @@ import React, { useEffect, useRef, useState } from 'react'
 let autoComplete
 
 const loadScript = (url, callback) => {
-    console.log(process.env.REACT_APP_GOOGLE_MAPS_KEY)
     let script = document.createElement("script")
     script.type = "text/javascript"
   
@@ -37,7 +36,19 @@ function initAutocomplete(autocompleteRef) {
         fields: ['geometry', 'formatted_address']
       }
     )
+
+      console.log(autoComplete)
+
+    autoComplete.addListener('place_changed', onPlaceChanged)
   }
+
+function onPlaceChanged(){
+  let place = autoComplete.getPlace()
+
+  console.log(place.formatted_address)
+  console.log(place.geometry.location.lat())
+  console.log(place.geometry.location.lng())
+}
 
 
 function LocationSearchBar() {
@@ -48,7 +59,6 @@ function LocationSearchBar() {
         loadScript(
           `https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_GOOGLE_MAPS_KEY}&libraries=places`,
           () => {initAutocomplete(autocompleteRef)})
-
         
       }, [])
 
