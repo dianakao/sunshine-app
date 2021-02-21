@@ -43,8 +43,6 @@ function initAutocomplete(autocompleteRef) {
       }
     )
 
-      console.log(autoComplete)
-
     autoComplete.addListener('place_changed', onPlaceChanged)
   }
 
@@ -54,12 +52,18 @@ function onPlaceChanged(){
   let place = autoComplete.getPlace()
 
   if (!place.geometry){
-    console.log("It works")
-    console.log(document.getElementById("autocomplete").placeholder)
+    // Change styling to signal that there was an error
   } else{
-    console.log(place.formatted_address)
-    console.log(place.geometry.location.lat())
-    console.log(place.geometry.location.lng())
+
+    // Currently just create and print the object, will eventually
+    // pass this into a state variable at a higher level
+    let currentPlace = {
+      address: place.formatted_address,
+      lat: place.geometry.location.lat(),
+      lng: place.geometry.location.lng()
+    }
+
+    console.log(currentPlace)
   }
    
 
