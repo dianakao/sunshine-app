@@ -16,7 +16,6 @@ let brooklynBounds = {
 
 
 /*---- Enable location based autocomplete from Google Maps ----*/
-
 function initAutocomplete(autocompleteRef) {
     autoComplete = new window.google.maps.places.Autocomplete(
      autocompleteRef.current,
@@ -31,7 +30,7 @@ function initAutocomplete(autocompleteRef) {
     autoComplete.addListener('place_changed', onPlaceChanged)
   }
 
-
+/*---- Function to be executed once place changes ----*/
 function onPlaceChanged(){
 
   let place = autoComplete.getPlace()
@@ -41,8 +40,11 @@ function onPlaceChanged(){
   } else{
 
     console.log(place)
-    // Currently just create and print the object, will eventually
-    // pass this into a state variable at a higher level
+    /* 
+      Currently just create and print the object, will eventually
+      pass this into a state variable at a higher level so that
+      other components can make the relevant claculations
+    */
     let currentPlace = {
       address: place.formatted_address,
       lat: place.geometry.location.lat(),
@@ -57,7 +59,6 @@ function onPlaceChanged(){
 }
 
 /*---- Create the component ----*/
-
 function LocationSearchBar() {
 
   const autocompleteRef = useRef(null)

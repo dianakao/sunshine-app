@@ -38,14 +38,25 @@ function test() {
 
 function App() {
 
-  /* The script is loaded asynchronously so that the other elements of the page
-    can load more quickly. With a stable internet connection the load time is
-    hardly noticeable, however a loading screen may be desirable for people
-    with less stable internet */
+
 
   const [isLoaded, setIsLoaded] = useState(false)
 
   useEffect(() => {
+
+      /* ----Note:----
+      
+        1. The script is loaded asynchronously so that the other elements of the page
+        can load more quickly. With a stable internet connection the load time is
+        hardly noticeable, however a loading screen may be desirable for people
+        with less stable internet 
+      
+        2. The loadScript function needs to be on the highest level component to
+        prevent the script from being added multiple times. Loading the Googe Maps API
+        more than once will not immediately crash the program but may have unforseen
+        consequences
+        */
+
     loadScript(
       `https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_GOOGLE_MAPS_KEY}&libraries=places&v=weekly`,
       () => {setIsLoaded(true)}

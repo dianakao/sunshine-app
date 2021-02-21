@@ -1,6 +1,10 @@
 
 import React, {useEffect, useRef} from 'react'
+import { renderToString } from 'react-dom/server' 
+
 import "./LocationMap.css"
+
+import InfoOverlay from '../InfoOverlay/InfoOverlay.jsx'
 
 // Initialize objects to be used between functions, but not outside the
 // scope of this component
@@ -32,7 +36,7 @@ const markerIcon = {
 
 function initGoogleMap(googleMapRef) {
 
-  // Create a new googleMap object
+  /*---- Create map using Google Maps ----*/
   googleMap = new window.google.maps.Map(
       googleMapRef.current, 
       {
@@ -46,12 +50,30 @@ function initGoogleMap(googleMapRef) {
         }
       }
   )
+  
+  /*---- Create the info window ----*/
 
-  infoWindow = new window.google.maps.InfoWindow()
+  /*
+    HTML needs to be passed as a string into the InfoWindow function, we use
+    this function to allow us to keep seperation of concerns between the
+    components
+  */
+  const contentString = renderToString(<InfoOverlay/>)
+
+  infoWindow = new window.google.maps.InfoWindow({
+    content: contentString
+  })
+  
+
+  /*----- Create the map marker ----*/
   mapMarker = new window.google.maps.Marker({
     position: { lat: 40.6782, lng: -73.9442},
     map: googleMap,
     icon: markerIcon
+  })
+
+  mapMarker.addListener("click", () => {
+    infoWindow.open(googleMap, mapMarker)
   })
 }
 
