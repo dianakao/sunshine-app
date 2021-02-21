@@ -3,7 +3,6 @@ import React, { useEffect, useRef, useState } from 'react'
 let autoComplete
 
 const loadScript = (url, callback) => {
-    console.log(process.env.REACT_APP_GOOGLE_MAPS_KEY)
     let script = document.createElement("script")
     script.type = "text/javascript"
   
