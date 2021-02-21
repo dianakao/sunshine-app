@@ -40,6 +40,7 @@ function onPlaceChanged(){
     // Change styling to signal that there was an error
   } else{
 
+    console.log(place)
     // Currently just create and print the object, will eventually
     // pass this into a state variable at a higher level
     let currentPlace = {
