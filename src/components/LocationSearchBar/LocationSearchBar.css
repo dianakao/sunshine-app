@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+#autocomplete{
+
+    width: 327px;
+    height: 32px;
+    
+    border-color: #ffb029;
+    border-radius: 10px;
+    border-style: solid;
+
+    text-align: center;
+}
+
+#autocomplete::placeholder {
+    color: #1e1c45;
+    opacity: 1;
+    font-size: 12px;
+    line-height: 15px;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+}
