@@ -10,7 +10,7 @@
 
 ## Screens
 
-### Landing Page (LandingPage.jsx)
+### Landing Page (Home)
 - #####  Logo Data Panel
   - Logo
   - Logo name Text
