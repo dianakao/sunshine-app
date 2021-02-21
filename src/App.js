@@ -1,10 +1,10 @@
 
 import React, {useEffect, useState} from 'react'
-import logo from './Assets/logo.svg';
-import './Styles/App.css';
+import logo from './assets/logo.svg';
+import './App.css';
 
-import LocationSearchBar from './Components/LocationSearchBar'
-import LocationMap from './Components/LocationMap'
+import LocationSearchBar from './components/LocationSearchBar/LocationSearchBar'
+import LocationMap from './components/LocationMap/LocationMap'
 import testUtils from 'react-dom/test-utils';
 
 

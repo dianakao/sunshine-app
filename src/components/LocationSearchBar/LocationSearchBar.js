@@ -1,5 +1,5 @@
-import React, { useEffect, useRef, useState } from 'react'
-import '../Styles/LocationSearchBar.css';
+import React, { useEffect, useRef} from 'react'
+import './LocationSearchBar.css';
 
 
 let autoComplete

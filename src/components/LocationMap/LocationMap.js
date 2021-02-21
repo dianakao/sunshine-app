@@ -1,6 +1,6 @@
 
-import React, {useEffect, useRef, useState} from 'react'
-import "../Styles/LocationMap.css"
+import React, {useEffect, useRef} from 'react'
+import "./LocationMap.css"
 
 let googleMap
 
@@ -9,7 +9,9 @@ function initGoogleMap(googleMapRef) {
         googleMapRef.current, 
         {
           center: { lat: 40.6782, lng: -73.9442},
-          zoom: 11
+          zoom: 11,
+          streetViewControl: false,
+          mapTypeControl: false
         }
     )
 }
