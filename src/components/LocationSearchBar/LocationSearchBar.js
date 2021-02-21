@@ -1,18 +1,30 @@
 import React, { useEffect, useRef} from 'react'
 import './LocationSearchBar.css';
 
-
+// Raise scope of autoComplete so that it can be referred to within all functions
+// within this file
 let autoComplete
 
-/*---- Enable location based autocomplete from Google Maps ----*/
+// Redundant code also included in Location, maybe different in final product
+// to provide a better visual experience for users
+let brooklynBounds = {
+  north: 40.740259,
+  south: 40.568521,
+  west: -74.043277,
+  east: -73.856017
+}
 
+
+/*---- Enable location based autocomplete from Google Maps ----*/
 
 function initAutocomplete(autocompleteRef) {
     autoComplete = new window.google.maps.places.Autocomplete(
      autocompleteRef.current,
       { types: ["address"], 
         componentRestrictions: { country: "us" },
-        fields: ['geometry', 'formatted_address']
+        fields: ['geometry', 'formatted_address'],
+        bounds: brooklynBounds,
+        strictBounds: true
       }
     )
 
