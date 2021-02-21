@@ -1,9 +1,11 @@
+
+import React from 'react'
 import logo from './Assets/logo.svg';
 import './Styles/App.css';
 
-function App() {
+import LocationSearchBar from './Components/LocationSearchBar'
 
-  console.log(process.env.REACT_APP_NREL_KEY)
+function App() {
 
   return (
     <div className="App">
@@ -20,6 +22,9 @@ function App() {
         >
           Learn React
         </a>
+
+        <LocationSearchBar onChange={() => null} />
+
       </header>
     </div>
   );
