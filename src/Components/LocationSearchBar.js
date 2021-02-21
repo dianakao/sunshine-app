@@ -4,33 +4,6 @@ import '../Styles/LocationSearchBar.css';
 
 let autoComplete
 
-/*---- Programatically create the script file necessary to load the places API ----*/
-
-const loadScript = (url, callback) => {
-    let script = document.createElement("script")
-    script.type = "text/javascript"
-  
-
-    let asyncAtt = document.createAttribute("async")
-    let deferAtt = document.createAttribute("defer")
-
-    if (script.readyState) {
-      script.onreadystatechange = function() {
-        if (script.readyState === "loaded" || script.readyState === "complete") {
-          script.onreadystatechange = null
-          callback()
-        }
-      }
-    } else {
-      script.onload = () => callback()
-    }
-  
-    script.src = url
-    script.setAttributeNode(asyncAtt)
-    script.setAttributeNode(deferAtt)
-    document.getElementsByTagName("head")[0].appendChild(script)
-}
-
 /*---- Enable location based autocomplete from Google Maps ----*/
 
 
@@ -73,24 +46,21 @@ function onPlaceChanged(){
 /*---- Create the component ----*/
 
 function LocationSearchBar() {
-    const [query, setQuery] = useState("")
-    const autocompleteRef = useRef(null)
 
-    useEffect(() => {
-        loadScript(
-          `https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_GOOGLE_MAPS_KEY}&libraries=places`,
-          () => {initAutocomplete(autocompleteRef)})
-        
-      }, [])
+  const autocompleteRef = useRef(null)
+    
+  useEffect( () => {
+    initAutocomplete(autocompleteRef)
+  },[])
 
     return(
         <div>
-            <input
-                ref={autocompleteRef}
-                id="autocomplete"
-                placeholder="Enter address"
-                type="text"
-            />
+          <input
+            ref={autocompleteRef}
+            id="autocomplete"
+            placeholder="Enter address"
+            type="text"
+          />
         </div>
     )
 }
