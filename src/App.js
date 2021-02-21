@@ -3,8 +3,8 @@ import React, {useEffect, useState} from 'react'
 import logo from './assets/logo.svg';
 import './App.css';
 
-import LocationSearchBar from './components/LocationSearchBar/LocationSearchBar'
-import LocationMap from './components/LocationMap/LocationMap'
+import LocationSearchBar from './components/LocationSearchBar/LocationSearchBar.jsx'
+import LocationMap from './components/LocationMap/LocationMap.jsx'
 import testUtils from 'react-dom/test-utils';
 
 
