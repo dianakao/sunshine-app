@@ -37,7 +37,13 @@ function initAutocomplete(autocompleteRef) {
         fields: ['geometry', 'formatted_address']
       }
     )
+
+    autocompleteRef.current.addEventListener('oninput', onPlaceChanged)
   }
+
+function onPlaceChanged(){
+  console.log("Place changed")
+}
 
 
 function LocationSearchBar() {
