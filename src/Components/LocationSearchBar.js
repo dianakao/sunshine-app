@@ -1,6 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react'
+import '../Styles/LocationSearchBar.css';
+
 
 let autoComplete
+
+/*---- Programatically create the script file necessary to load the places API ----*/
 
 const loadScript = (url, callback) => {
     let script = document.createElement("script")
@@ -27,6 +31,8 @@ const loadScript = (url, callback) => {
     document.getElementsByTagName("head")[0].appendChild(script)
 }
 
+/*---- Enable location based autocomplete from Google Maps ----*/
+
 
 function initAutocomplete(autocompleteRef) {
     autoComplete = new window.google.maps.places.Autocomplete(
@@ -42,14 +48,25 @@ function initAutocomplete(autocompleteRef) {
     autoComplete.addListener('place_changed', onPlaceChanged)
   }
 
+
 function onPlaceChanged(){
+
   let place = autoComplete.getPlace()
 
-  console.log(place.formatted_address)
-  console.log(place.geometry.location.lat())
-  console.log(place.geometry.location.lng())
+  if (!place.geometry){
+    console.log("It works")
+    console.log(document.getElementById("autocomplete").placeholder)
+  } else{
+    console.log(place.formatted_address)
+    console.log(place.geometry.location.lat())
+    console.log(place.geometry.location.lng())
+  }
+   
+
+
 }
 
+/*---- Create the component ----*/
 
 function LocationSearchBar() {
     const [query, setQuery] = useState("")
@@ -66,7 +83,8 @@ function LocationSearchBar() {
         <div>
             <input
                 ref={autocompleteRef}
-                placeholder="Enter a City"
+                id="autocomplete"
+                placeholder="Enter address"
                 type="text"
             />
         </div>
