@@ -5,69 +5,74 @@ import Savings from '../../components/Savings/Savings'
 import Impact from '../../components/Impact/Impact'
 
 const Overlay = (props) => {
+  const grandparent = document.getElementsByClassName('infooverlay')
+  const heading = document.createElement('h2')
+  const text1 = document.createElement('p')
+  const destination = document.querySelector('.infotext')
+  let button
 
-  function clearPanel(obj = null, tag = null) {
-    let parent
-    if (obj){
-      parent = document.getElementsByClassName(obj)
-    } else if (tag) {
-      parent = document.getElementsByTagName(tag)
-    }
-
-    while (parent.firstChild){
+  function clearPanel() {
+    const parent = document.getElementsByClassName('infotext')
+    while (parent.firstChild) {
       parent.removeChild(parent.lastChild)
     }
-
   }
 
+  window.addEventListener('click', function(e){
+    const element = document.getElementsByClassName('infotext')
+
+
+    // if (element[0].classList.contains('clicked')){
+    //   console.log(e.target.tagName)
+    // } else{
+    //   console.log(e.target.classList)
+    //   element[0].classList.remove('clicked')
+    // }
+  });
 
   function handleClick(e) {
-    const buttons = ['sunscorebutton','impactbutton','savingsbutton']
-    // buttons.forEach(x => x)
-    let button
-    let category =  e.target.className
+    const buttons = ['sunscorebutton', 'impactbutton', 'savingsbutton']
+    buttons.forEach(x => {
+      document.getElementsByClassName(x)[0].classList.remove('selected')
+    })
+
+    if (!grandparent[0].classList.contains('clicked')) {
+      grandparent[0].classList.add('clicked')
+    }
+
+    // console.log(grandparent[0].classList)
+    let category = e.target.className
     let selection = ""
-    let heading = ""
-    let text1 = ""
     let data = JSON.parse(e.target.getAttribute('data-text'))
-    let destination = document.querySelector('.infotext')
     // console.log(e.target.className, JSON.stringify(e.target.getAttribute('data-text')))
-    console.log(destination)
-    console.log(data)
+    // console.log(destination)
+    // console.log(data)
     switch (category) {
       case "sunscorebutton":
         button = document.getElementsByClassName(category)
-        // button.classList.add("selected")        
-        console.log(button)
-        clearPanel('infotext')
-        clearPanel(null, 'h2')
-        clearPanel(null, 'p')
+        button[0].classList.toggle('selected')
+        clearPanel()
         selection = "Sun Score"
-        heading = document.createElement('h2')
-        text1 = document.createElement('p')
         heading.innerHTML = data.h1
         text1.innerText = data.text1
         destination.appendChild(heading)
         destination.appendChild(text1)
-        // destination.innerHTML = `This is ${selection} info. Including ${data.h1}`
         break;
       case "impactbutton":
         button = document.getElementsByClassName(category)
-        console.log(button)
-        // button.classList.add("selected")        
-        clearPanel('infotext')
-        selection = "Impact"
-        destination.innerHTML = `This is ${selection} info. Including ${data.key1}`
+        button[0].classList.toggle('selected')
+        clearPanel()
+        selection = "Sun Score"
+        heading.innerHTML = data.h1
+        text1.innerText = data.impact
+        destination.appendChild(heading)
+        destination.appendChild(text1)
         break;
       case "savingsbutton":
         button = document.getElementsByClassName(category)
-        // button.classList.add("selected")        
-        console.log(button)
-        clearPanel('infotext')
-        clearPanel('infotext')
+        button[0].classList.toggle('selected')
+        clearPanel()
         selection = "Savings"
-        heading = document.createElement('h2')
-        text1 = document.createElement('p')
         heading.innerHTML = data.savings
         text1.innerText = data.note
         destination.appendChild(heading)
