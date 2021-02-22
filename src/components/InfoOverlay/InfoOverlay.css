@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
-.info-container{
+.info-overlay{
     display: flex;
     flex-direction: column;
     align-items: center;

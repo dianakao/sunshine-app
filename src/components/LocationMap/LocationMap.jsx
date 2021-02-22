@@ -1,6 +1,7 @@
 
 import React, {useEffect, useRef} from 'react'
-import { renderToString } from 'react-dom/server' 
+import { renderToString} from 'react-dom/server' 
+import { hydrate} from 'react-dom'
 
 import "./LocationMap.css"
 
@@ -55,14 +56,27 @@ function initGoogleMap(googleMapRef) {
 
   /*
     HTML needs to be passed as a string into the InfoWindow function, we use
-    this function to allow us to keep seperation of concerns between the
-    components
+    renderToString to render the INITIAL HTML from the our component, and 
+    then use hydrate to fully render the components
+
+    Please see the following links for more information:
+      1. https://reactjs.org/docs/react-dom.html#hydrate
+      2. https://reactjs.org/docs/react-dom-server.html#rendertostring
   */
   const contentString = renderToString(<InfoOverlay/>)
 
   infoWindow = new window.google.maps.InfoWindow({
     content: contentString
   })
+
+
+  // Wait for the info window to fully attach to the DOM before hydrating
+  window.google.maps.event.addListener(infoWindow, 'domready', () => {
+    let container = document
+      .getElementsByClassName("gm-style-iw-d")[0]
+      .childNodes[0]
+    hydrate(<InfoOverlay/>, container)
+  });
   
 
   /*----- Create the map marker ----*/

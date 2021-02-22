@@ -5,6 +5,9 @@ import './App.css';
 
 import LocationSearchBar from './components/LocationSearchBar/LocationSearchBar.jsx'
 import LocationMap from './components/LocationMap/LocationMap.jsx'
+import SunshineGph from './components/SunshineGph/SunshineGph.jsx'
+
+
 import testUtils from 'react-dom/test-utils';
 
 
@@ -84,6 +87,7 @@ function App() {
         { isLoaded &&
           <LocationMap/>
         }
+        <h1>TEST</h1>
 
       </header>
     </div>
