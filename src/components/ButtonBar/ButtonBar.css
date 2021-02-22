@@ -1,0 +1,7 @@
+.infobuttons {
+  display: flex;
+  background: white;
+  height: 150px;
+  width: 300px;
+  justify-content: space-evenly;
+}

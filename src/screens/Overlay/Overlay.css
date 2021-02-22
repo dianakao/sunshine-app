@@ -1,0 +1,29 @@
+hr {
+  width: 30%;
+}
+
+/* .handle {
+  height:   5px;
+  width: 100px;
+  margin: 15px 0 0 0;
+  align-self: center;
+  background: #39BCF6;
+} */
+
+.infobuttons {
+  display: flex;
+  margin: 10px 0 10px 0;
+  width: 300px;
+  justify-content: space-evenly;
+  align-content: center;
+  border-top: 4px solid #39BCF6;
+  border-bottom: 4px solid #39BCF6;
+}
+
+.infotext {
+  display: flex;
+  width: 300px;
+  height: 500px;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
