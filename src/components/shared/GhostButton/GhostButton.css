@@ -1,0 +1,23 @@
+.ghost-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    width: 99px;
+    height: 24px;
+
+    background: #FFFFFF;
+    border: 1px solid #39BCF6;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.ghost-button > h1 {
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+
+    color: #39BCF6;
+}
