@@ -6,8 +6,6 @@
   - Footer
   - Layout
 
-
-
 ## Screens
 
 ### Landing Page (Home)
@@ -29,27 +27,27 @@
   - Displays 3 Navigation buttons: Sunscore, Savings, Impact
 
 ### Results Page Main - Map and Info overlay
+  - map and location search part of Layout
 
-### Results Page 0 - Sun Score, Savings, Impact overlay
+### Results Page - Sun Score, Savings, Impact overlay
 - #### Button Panel
+  - onclick handler updates info panel
 - #### Info Panel
-
-### Results Page 1 - Sun Score overlay
-- #### Button Panel
-- #### Info Panel - Sun Score Data
-
-### Results Page 2 - Savings overlay
-- #### Button Panel
-- #### Info Panel - Savings Data
-
-### Results Page 3 - Impact overlay
-- #### Button Panel
-- #### Info Panel - Impact Data
+  - update text with onclick event on one of the buttons
+  - Contextualize the text according to which button clicked
 
 ## Technical Challenges
-- #### Implementing the swipe Overlay
+- #### Google maps API
+  - restricting search context
+  - integrating with React framework while maintaining API key security
+
+- #### Map info overlay
+  - integrating the data with the map API functionality
+
+## Technical Challenges
+- #### Implementing the Results Overlay
   - CSS for triggering the swipe
   - Simpler to have the buttons trigger the overlay to slide up
   - How to position the Info screen to be an overlay on the main Results screen
 - #### Implementing CSS
-  - Alignment of components is tricky
+  - Alignment of components is tricky and time consuming. Can delay development of functional code.
