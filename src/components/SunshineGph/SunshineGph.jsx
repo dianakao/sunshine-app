@@ -22,9 +22,6 @@ const testData = [
 function drawBarChart(shadowData, gphRef) {
 
     /*---- Create the chart dimensions ----*/
-
-    console.log("This runs")
-    
     let dimensions =  {
         width: 156,
         height: 81,
@@ -37,19 +34,19 @@ function drawBarChart(shadowData, gphRef) {
     }
 
     dimensions.boundedWidth = dimensions.width
-    - dimensions.margin.left
-    - dimensions.margin.right
-  dimensions.boundedHeight = dimensions.height
-    - dimensions.margin.top
-    - dimensions.margin.bottom
+        - dimensions.margin.left
+        - dimensions.margin.right
+    dimensions.boundedHeight = dimensions.height
+        - dimensions.margin.top
+        - dimensions.margin.bottom
 
-  dimensions.boundedWidth = dimensions.width
-      - dimensions.margin.left
-      - dimensions.margin.right
-  
-  dimensions.boundedHeight = dimensions.height
-      - dimensions.margin.top
-      - dimensions.margin.bottom
+    dimensions.boundedWidth = dimensions.width
+        - dimensions.margin.left
+        - dimensions.margin.right
+    
+    dimensions.boundedHeight = dimensions.height
+        - dimensions.margin.top
+        - dimensions.margin.bottom
 
     /*----Draw the canvas ----*/
     const svgContainer = d3.select(gphRef.current)

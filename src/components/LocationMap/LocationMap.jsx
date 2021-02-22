@@ -72,10 +72,13 @@ function initGoogleMap(googleMapRef) {
 
   // Wait for the info window to fully attach to the DOM before hydrating
   window.google.maps.event.addListener(infoWindow, 'domready', () => {
+    
+    // Selects the appropriate element in the DOM to prevent deletion of divs
     let container = document
       .getElementsByClassName("gm-style-iw-d")[0]
       .childNodes[0]
-    hydrate(<InfoOverlay/>, container)
+    
+      hydrate(<InfoOverlay/>, container)
   });
   
 
