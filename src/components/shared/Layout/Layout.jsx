@@ -9,6 +9,7 @@ const Layout = (props) => {
       <Nav />
       <div className="layout-children">
         {props.children}
+        The main content goes here
       </div>
       <Footer />
     </div>

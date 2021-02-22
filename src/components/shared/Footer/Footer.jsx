@@ -3,7 +3,7 @@ import './Footer.css'
 
 const Footer = (props) => {
   return (
-    <footer></footer>
+    <footer>Footer content goes here</footer>
   )
 }
 
