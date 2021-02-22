@@ -81,7 +81,10 @@ function initGoogleMap(googleMapRef) {
       hydrate(<InfoOverlay/>, container)
   });
   
-
+  window.google.maps.event.addListener(googleMap, "click", () =>{
+    infoWindow.close()
+  })
+ 
   /*----- Create the map marker ----*/
   mapMarker = new window.google.maps.Marker({
     position: { lat: 40.6782, lng: -73.9442},
