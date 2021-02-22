@@ -30,21 +30,10 @@
 
 ### Results Page Main - Map and Info overlay
 
-### Results Page 0 - Sun Score, Savings, Impact overlay
+### Results Page - Sun Score, Savings, Impact overlay
 - #### Button Panel
+  - onclick handler updates info panel
 - #### Info Panel
-
-### Results Page 1 - Sun Score overlay
-- #### Button Panel
-- #### Info Panel - Sun Score Data
-
-### Results Page 2 - Savings overlay
-- #### Button Panel
-- #### Info Panel - Savings Data
-
-### Results Page 3 - Impact overlay
-- #### Button Panel
-- #### Info Panel - Impact Data
 
 ## Technical Challenges
 - #### Implementing the Overlay
