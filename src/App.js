@@ -4,6 +4,7 @@ import {Route, Switch } from 'react-router-dom'
 import './App.css';
 
 import Home from './screens/Home/Home'
+import Nav from './components/shared/Nav/Nav.jsx'
 
 
 
@@ -66,6 +67,7 @@ function App() {
       
       <div className="App">
       <header className="App-header">
+        <Nav/>
       </header>
       <Switch>
         <Route exact path="/" render={()=> <Home isLoaded={isLoaded}/>}/>
