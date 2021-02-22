@@ -7,7 +7,7 @@ const Nav = (props) => {
     <nav>
       <div className="nav">
         <div className="logo">
-          <img src="../../../Assets/sunshine.jpg" alt="" className="sunshine"/>
+          <img src="../../../assets/nav_placeholder.jpg" alt="" className="sunshine"/>
         </div>
         <div className="links">
           <a href="#" className="link">Login</a>
