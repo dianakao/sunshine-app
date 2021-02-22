@@ -10,7 +10,7 @@ const Savings = (props) => {
   }
 
   return (
-    <div className="savingsbutton"><span class="material-icons md-24">attach_money</span></div>
+    <div className="savingsbutton"><span className="material-icons md-24">attach_money</span></div>
   )
 }
 

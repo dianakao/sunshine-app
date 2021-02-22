@@ -7,18 +7,19 @@ import Impact from '../../components/Impact/Impact'
 const Overlay = (props) => {
 
   function handleClick(e) {
-    console.log(`Clicked {e.target}`)
-    let destination = document.querySelector('infotext')
-    destination.innerHTML = `{e.target} wqs selected.`
+    console.log(e.target.className)
+    let destination = document.querySelector('.infotext')
+    console.log(destination)
+    destination.innerHTML = `You clicked Sunscore.`
   }
 
 
   return (
     <>
       <div className="infobuttons">
-        <Sunscore onclick = {handleClick} />
-        <Savings onclick = {handleClick} />
-        <Impact onclick = {handleClick} />
+        <Sunscore onClick={handleClick} />
+        <Savings onClick={handleClick} />
+        <Impact onClick={handleClick} />
       </div>
       <div className="infotext"></div>
     </>
