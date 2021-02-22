@@ -4,6 +4,7 @@ import './App.css';
 
 import LocationSearchBar from './components/LocationSearchBar/LocationSearchBar.jsx'
 import LocationMap from './components/LocationMap/LocationMap.jsx'
+import WeatherPanel from './components/WeatherPanel/WeatherPanel.jsx'
 
 
 /*---- Programatically create the script file necessary to load the places API ----*/
@@ -82,6 +83,8 @@ function App() {
         { isLoaded &&
           <LocationMap/>
         }
+
+        <WeatherPanel/>
 
       </header>
     </div>
