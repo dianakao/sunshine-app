@@ -80,6 +80,7 @@ function drawBarChart(shadowData, gphRef) {
     // Add the x-axis to the bottom of the chart
     chart.append('g')
       .attr('transform', `translate(0, ${dimensions.boundedHeight})`)
+      .attr("class", "xAxis")
       .call(d3.axisBottom(xScale));
 
     /*---- Draw the data ----*/
@@ -121,8 +122,6 @@ function SunshineGph(){
         id="img-wrapper"
         ref={gphRef}
         >
-            {drawBarChart(testData,gphRef)}
-
         </div>
     )
 
