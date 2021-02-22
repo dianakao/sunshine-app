@@ -3,10 +3,12 @@
 
 
 .home-container{
-    height: 95%;
+    margin-top: 41px;
+    margin-bottom: 30px;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
 }
 
