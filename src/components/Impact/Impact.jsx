@@ -5,15 +5,12 @@ import baselinePeopleOutline from '@iconify-icons/ic/baseline-people-outline';
 
 
 const Impact = (props) => {
-  
-
-
-  const handleClick = (e) => {
-    console.log("Clicked Impact Info")
+  const copy={
+    "key1": "Data related to Impact"
   }
 
   return (
-    <div className="impactbutton"><Icon icon={baselinePeopleOutline} /></div>
+    <div className="impactbutton" onClick={props.onClick} data-text={JSON.stringify(copy)}></div>
   )
 }
 

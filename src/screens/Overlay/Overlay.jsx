@@ -7,10 +7,27 @@ import Impact from '../../components/Impact/Impact'
 const Overlay = (props) => {
 
   function handleClick(e) {
-    console.log(e.target.className)
+    let category =  e.target.className
+    let selection
+    let data = JSON.parse(e.target.getAttribute('data-text'))
     let destination = document.querySelector('.infotext')
+    // console.log(e.target.className, JSON.stringify(e.target.getAttribute('data-text')))
     console.log(destination)
-    destination.innerHTML = `You clicked Sunscore.`
+    console.log(data)
+    switch (category) {
+      case "sunscorebutton":
+        selection = "Sun Score"
+        break;
+      case "impactbutton":
+        selection = "Impact"
+        break;
+      case "savingsbutton":
+        selection = "Savings"
+        break;
+    }
+
+
+    destination.innerHTML = `This is ${selection} info. Including ${data.key1}`
   }
 
 

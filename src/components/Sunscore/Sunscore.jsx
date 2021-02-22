@@ -2,15 +2,11 @@ import React from 'react'
 import './Sunscore.css'
 
 const Sunscore = (props) => {
-
-  // console.log(props.onClick)
-  // const handleClick = (e) => {
-  //   console.log("Clicked Sunscore Info")
-  // }
-
+  const copy = {
+    "key1": "Data related to Sun Score"
+  }
   return (
-    // <div className="sunscorebutton" onClick={props.onClick}><span className="material-icons md-24">wb_sunny</span></div>
-    <div className="sunscorebutton" onClick={props.onClick}></div>
+    <div className="sunscorebutton" onClick={props.onClick} data-text={JSON.stringify(copy)}></div>
   )
 }
 
