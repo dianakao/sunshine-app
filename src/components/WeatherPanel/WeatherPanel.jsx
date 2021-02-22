@@ -8,7 +8,10 @@ import WeatherCard from '../WeatherCard/WeatherCard.jsx'
 import './WeatherPanel.css'
 
 
-import sunLogo from "../../assets/sun-logo.png"
+import sunriseLogo from "../../assets/sunrise-logo.png"
+import sunsetLogo from "../../assets/sunset-logo.png"
+import tempLogo from "../../assets/temp-logo.png"
+import visibilityLogo from "../../assets/visibility-logo.png"
 
 function convertTimeToString(unixTS){
 
@@ -30,7 +33,7 @@ function WeatherPanel(){
                     sunrise: convertTimeToString(res.data.sys.sunrise),
                     sunset: convertTimeToString(res.data.sys.sunset),
                     high_low: `${res.data.main.temp_min} F/ ${res.data.main.temp_max} F`,
-                    visibility: res.data.visibility * 0.00062137,
+                    visibility:`${Math.round(res.data.visibility * 0.00062137)} mi`,
                 })
             })
     }, [])
@@ -38,7 +41,12 @@ function WeatherPanel(){
     console.log(weatherData)
     return(
         <div className="weather-panel">
-            <WeatherCard imgURL={sunLogo} title="Sunrise" data={weatherData.sunrise}/>
+            <div className="card-wrapper">
+                <WeatherCard imgURL={sunriseLogo} title="Sunrise" data={weatherData.sunrise}/>
+                <WeatherCard imgURL={tempLogo} title="High/Low" data={weatherData.high_low}/>
+                <WeatherCard imgURL={sunsetLogo} title="Sunset" data={weatherData.sunset}/>
+                <WeatherCard imgURL={visibilityLogo} title="Visibility" data={weatherData.visibility}/>
+            </div>
         </div>
     )
 
