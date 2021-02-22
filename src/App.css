@@ -1,12 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
+/* * {
+  border: 3px solid gold;
+} */
+
 .App {
   display: flex;
   text-align: center;
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: white;
   min-height: 75vh;
   display: flex;
   flex-direction: column;
@@ -18,4 +22,14 @@
 
 .App-link {
   color: #61dafb;
+}
+
+.infooverlay {
+  align-self: center;
+  transform: translateY(-20%);
+}
+
+.infooverlay .clicked {
+  align-self: center;
+  transform: translateY(-60%);
 }
