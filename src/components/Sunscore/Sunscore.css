@@ -1,0 +1,10 @@
+.sunscorebutton {
+  display: flex;
+  background: #FFB029;
+  border-radius: 50%;
+  height: 65px;
+  width: 65px;
+  justify-items: center;
+}
+
+/* .material-icons { font-size: 24px;} */

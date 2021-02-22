@@ -6,6 +6,7 @@ import './App.css';
 import LocationSearchBar from './components/LocationSearchBar/LocationSearchBar'
 import LocationMap from './components/LocationMap/LocationMap'
 import testUtils from 'react-dom/test-utils';
+import ButtonBar from './components/ButtonBar/ButtonBar'
 
 
 /*---- Programatically create the script file necessary to load the places API ----*/
@@ -73,9 +74,11 @@ function App() {
         { isLoaded &&
           <LocationMap/>
         }
-
       </header>
+      <ButtonBar />
     </div>
+    
+
   );
 }
 
