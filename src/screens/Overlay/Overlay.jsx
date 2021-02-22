@@ -17,29 +17,38 @@ const Overlay = (props) => {
     switch (category) {
       case "sunscorebutton":
         selection = "Sun Score"
+        let heading = document.createElement('h2')
+        let text1 = document.createElement('p')
+        heading.innerHTML = data.h1
+        text1.innerText = data.text1
+        destination.appendChild(heading)
+        destination.appendChild(text1)
+        // destination.innerHTML = `This is ${selection} info. Including ${data.h1}`
         break;
       case "impactbutton":
         selection = "Impact"
+        destination.innerHTML = `This is ${selection} info. Including ${data.key1}`
         break;
       case "savingsbutton":
         selection = "Savings"
+        destination.innerHTML = `This is ${selection} info. Including ${data.key1}`
         break;
     }
 
 
-    destination.innerHTML = `This is ${selection} info. Including ${data.key1}`
   }
 
 
   return (
-    <>
+    <div className="infooverlay">
+      <div className="handle"></div>
       <div className="infobuttons">
         <Sunscore onClick={handleClick} />
         <Savings onClick={handleClick} />
         <Impact onClick={handleClick} />
       </div>
       <div className="infotext"></div>
-    </>
+    </div>
   )
 }
 

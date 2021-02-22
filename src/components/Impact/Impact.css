@@ -3,6 +3,7 @@
   border-radius: 50%;
   height: 65px;
   width: 65px;
+  margin: 5px 0;
   background-image: url("../../assets/customers.png");
   background-repeat: no-repeat;
   background-position: center;

@@ -4,6 +4,7 @@
   border-radius: 50%;
   height: 65px;
   width: 65px;
+  margin: 5px 0;
   justify-items: center;
   background-image: url("../../assets/sun.png");
   background-repeat: no-repeat;
