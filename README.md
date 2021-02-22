@@ -47,5 +47,9 @@
 - #### Info Panel - Impact Data
 
 ## Technical Challenges
-- #### Implementing the Overlay
+- #### Implementing the swipe Overlay
+  - CSS for triggering the swipe
+  - Simpler to have the buttons trigger the overlay to slide up
+  - How to position the Info screen to be an overlay on the main Results screen
 - #### Implementing CSS
+  - Alignment of components is tricky
