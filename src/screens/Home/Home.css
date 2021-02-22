@@ -3,13 +3,13 @@
 
 
 .home-container{
-    margin-top: 41px;
-    margin-bottom: 30px;
-    height: 100%;
+    padding-top: 41px;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    box-sizing: border-box;
 }
 
 
@@ -64,6 +64,7 @@
     font-size: 18px;
     line-height: 22px;
     color: #1E1C45;
+    margin: 0px;
 }
 
 .orange{
@@ -93,4 +94,5 @@
     line-height: 17px;
     text-align: center;
     color: #1E1C45;
+    margin: 0px;
 }
