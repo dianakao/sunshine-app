@@ -6,7 +6,10 @@ import baselinePeopleOutline from '@iconify-icons/ic/baseline-people-outline';
 
 const Impact = (props) => {
   const copy={
-    "key1": "Data related to Impact"
+    "h1": "Your community impact is",
+    "impact": "number",
+    "note": "This was claculated based on a number of factors including",
+    "factors": ["kWh saved"]
   }
 
   return (

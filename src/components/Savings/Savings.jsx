@@ -3,7 +3,10 @@ import './Savings.css'
 
 const Savings = (props) => {
   const copy = {
-    "key1": "Data related to Savings"
+    "savings": "Your savings/month are:",
+    "amount": "value",
+    "note": "This was calculated based on a number of factors including: ",
+    "factors": ["Tax incentives"]
   }
 
   return (

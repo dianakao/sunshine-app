@@ -66,8 +66,8 @@ function App() {
         { isLoaded &&
           <LocationMap/>
         }
-      </header>
       <Overlay />
+      </header>
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/results" component={Results} />
