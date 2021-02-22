@@ -1,10 +1,10 @@
-
 import React, {useEffect, useState} from 'react'
+import {Route, Switch } from 'react-router-dom'
+
 import './App.css';
 
-import LocationSearchBar from './components/LocationSearchBar/LocationSearchBar.jsx'
-import LocationMap from './components/LocationMap/LocationMap.jsx'
-import WeatherPanel from './components/WeatherPanel/WeatherPanel.jsx'
+import Home from './screens/Home/Home'
+
 
 
 /*---- Programatically create the script file necessary to load the places API ----*/
@@ -63,31 +63,16 @@ function App() {
   }, [])
 
   return (
-    <div className="App">
+      
+      <div className="App">
       <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        { isLoaded &&
-          <LocationSearchBar/>
-        }
-        
-        { isLoaded &&
-          <LocationMap/>
-        }
-
-        <WeatherPanel/>
-
       </header>
+      <Switch>
+        <Route exact path="/" render={()=> <Home isLoaded={isLoaded}/>}/>
+      </Switch>
     </div>
+
+
   );
 }
 
