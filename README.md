@@ -44,6 +44,7 @@
 - #### Map info overlay
   - integrating the data with the map API functionality
 
+## Technical Challenges
 - #### Implementing the Results Overlay
   - CSS for triggering the swipe
   - Simpler to have the buttons trigger the overlay to slide up
