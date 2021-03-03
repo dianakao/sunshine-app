@@ -1,15 +1,45 @@
 # sunshine-app
-## Diana Edit
-## Diana Edit 2
-## Diana Edit 3
 
-## Components
+## Style Guide for Components, Colors, Typefaces, Grid Style, and Screen Sizes
+
+### Components
   - LocationSearchResults
   - Nav
   - Footer
   - Layout
 
-## Screens
+### Colors
+  - #1E1C45 Midnight
+  - #39BCF6 Sky Blue
+  - #FFB029 Sun Yellow
+  - #FF6F1C Orange Ray
+  - #FFDA1C Taxi Yellow
+  - #FFFFFF White
+  - #000000 Black
+  - #6D6D6D Storm Cloud
+  - #959595 Rain Cloud
+  - #C9C9C9 Cloudy Grey
+  - #E9E9E9 Misty Grey
+  - #F2F2F2 White Smoke
+  - #FFFFFF White
+
+### Typefaces
+  - H1 - Montserrat Bold 24 pt
+  - H2 - Montserrat Bold 18 pt
+  - H3 - Montserrat 18 pt
+  - H4 - Montserrat Bold 14 pt
+  - H5 - Montserrat 14 pt
+  - H6 - Lato 12 pt
+  - P - Montserrat 12 pt
+  - Body - Lato 12 pt
+
+### Grid style
+  - 3-column Layout Grid 1
+  - Margin 24px
+  - Gutter 16 px
+
+### Screens
+  -iPhone 11 Pro, w: 375px x h: 812px
 
 ### Landing Page (Home)
 - #####  Logo Data Panel
@@ -34,10 +64,10 @@
 
 ### Results Page - Sun Score, Savings, Impact overlay
 - #### Button Panel
-  - onclick handler updates info panel
+  - Onclick handler updates info panel
 - #### Info Panel
-  - update text with onclick event on one of the buttons
-  - Contextualize the text according to which button clicked
+  - Update text with onclick event on one of the buttons
+  - Contextualize the text according to which button is clicked
 
 ## Technical Challenges
 - #### Google maps API
