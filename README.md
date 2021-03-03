@@ -39,7 +39,7 @@
   - Gutter 16 px
 
 ### Screens
-  -iPhone 11 Pro, w: 375px x h: 812px
+  - iPhone 11 Pro, w: 375px x h: 812px
 
 ### Landing Page (Home)
 - #####  Logo Data Panel
